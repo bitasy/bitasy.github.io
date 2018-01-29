@@ -1,4 +1,4 @@
 # bitasy.github.io
-My personal website respository.
+My personal website repository.
 
 Visit it at [bitasy.me](bitasy.me/)!
