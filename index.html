@@ -4,6 +4,9 @@
     <link rel = "stylesheet" type = "text/css" href = "css/styles.css">
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lato:100|Cutive+Mono">
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <title>Brian Nieves</title>
   </head>
   <body>
@@ -30,4 +33,13 @@
         <img src="icons/linkedin/LinkedIn [in] for Screen/2-Color/In-2C-66px-TM.png"</a>
     </div>
   </body>
+
+  <script>
+    //Required to make body's height a static amount for top to work in css.
+    $("body").height( $(this).height() );
+    //Might as well resize every time, since top is % based and the above line makes height static.
+    $(window).on('resize', function(){
+      $("body").height( $(this).height() );
+    });
+  </script>
 </html>
