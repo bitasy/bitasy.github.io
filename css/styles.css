@@ -28,7 +28,7 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-  #top_spacer {
-    height: 20%;
+  #heading {
+    margin-top: 20%;
   }
 }
