@@ -1,7 +1,18 @@
+body {
+  background-color: #eeeeee;
+}
+
 #heading {
-    margin: auto;
-    width: 50%;
+    width: 100%;
     padding: 10px;
     text-align: center;
-    font-family: Helvetica
+    font-size: 80px;
+    font-family: 'Lato', 'Segoe UI Light', 'Calibri Light', sans-serif;
+
+}
+
+@media screen and (min-width: 600px) {
+  #top_spacer {
+    height: 20%;
+  }
 }
