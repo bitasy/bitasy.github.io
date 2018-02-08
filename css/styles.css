@@ -5,13 +5,20 @@ body {
 #heading {
     width: 100%;
     padding: 10px;
+    position: relative;
     text-align: center;
     font-size: 80px;
     font-family: 'Lato', 'Segoe UI Light', 'Calibri Light', sans-serif;
-
 }
 
-.middle {
+hr {
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+body p, #links {
+  position: relative;
   margin: auto;
   padding-bottom: 15px;
   width: 400px;
@@ -19,6 +26,7 @@ body {
   font-weight: 900;
   font-size: 20px;
   font-family: 'Lato';
+  line-height: 200%
 }
 
 #programming {
@@ -29,6 +37,10 @@ body {
 
 @media screen and (min-width: 600px) {
   #heading {
-    margin-top: 20%;
+    top: 20%;
   }
+  body p, #links, hr {
+    top: 20%;
+  }
+
 }
