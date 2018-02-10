@@ -29,7 +29,7 @@ body p, #links {
   line-height: 200%
 }
 
-#programming {
+.programming {
   font-family: 'Cutive+Mono', monospace;
   font-weight: 100;
   margin-left: 5px;
