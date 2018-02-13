@@ -10,6 +10,7 @@
     <title>Brian Nieves</title>
   </head>
   <body>
+    <img id="portrait", src="images/face_portrait.jpg" alt="Portrait of Brian Nieves" />
     <div id = "heading">
       Brian <b>Nieves</b>
     </div>
@@ -24,6 +25,10 @@
       Why <i>bitasy</i>? I consider it my online pseudonym of sorts; it follows me everywhere I go on the internet.
     </p>
 
+    <p>
+      <i>Portfolio coming soon.</i> In the meantime, please check out my Github and resume below!
+    </p>
+
     <div id="links" style="text-align: center">
       <a href="resume.pdf">
         <img src="icons/resume.png" alt="Resume" /></a>
@@ -32,14 +37,6 @@
       <a href="https://www.linkedin.com/in/bitasy/">
         <img src="icons/linkedin/LinkedIn [in] for Screen/2-Color/In-2C-66px-TM.png"</a>
     </div>
-  </body>
 
-  <script>
-    //Required to make body's height a static amount for top to work in css.
-    $("body").height( $(this).height() );
-    //Might as well resize every time, since top is % based and the above line makes height static.
-    $(window).on('resize', function(){
-      $("body").height( $(this).height() );
-    });
-  </script>
+  </body>
 </html>
