@@ -1,5 +1,6 @@
 body {
-  background-color: #eeeeee;
+  background-color: #eee;
+  z-index: 0;
 }
 
 #portrait{
@@ -13,17 +14,14 @@ body {
 
 #heading {
     width: 100%;
-    padding: 10px;
-    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #eee;
+    z-index: 1;
     text-align: center;
     font-size: 80px;
     font-family: 'Lato', 'Segoe UI Light', 'Calibri Light', sans-serif;
-}
-
-hr {
-  position: relative;
-  margin-top: 0px;
-  margin-bottom: 20px;
 }
 
 body p, #links {
