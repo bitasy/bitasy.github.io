@@ -2,12 +2,16 @@ var gulp         = require('gulp');
 var browserSync  = require('browser-sync').create();
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var uncss        = require('gulp-uncss');
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
     return gulp.src('src/scss/app.scss')
         .pipe( sass() )
         .pipe( autoprefixer() )
+        .pipe(uncss({
+            html: ['index.html']
+        }))
         .pipe( gulp.dest('src/css/') )
         .pipe( browserSync.stream() );
 });
