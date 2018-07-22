@@ -50,6 +50,9 @@ html {
 @-ms-viewport {
   width: device-width; }
 
+section {
+  display: block; }
+
 body {
   margin: 0;
   font-family: "Lato", "Segoe UI Light", "Calibri Light", sans-serif;
@@ -95,23 +98,22 @@ hr {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
+#intro, #projects {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
 .row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
 
-.col {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px; }
-
-.col {
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%; }
+@media (min-width: 768px) {
+  .img_wrapper {
+    margin-left: 8.33333%; } }
   .form-control::placeholder {
     color: #6c757d;
     opacity: 1; }
@@ -232,17 +234,15 @@ hr {
 #portrait {
   display: block !important; }
 
-#name, .center_row {
+#self .words {
+  display: inline-flex !important; }
+
+.center_row {
   justify-content: center !important; }
 
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-  #name {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1020; } }
+@supports ((position: -webkit-sticky) or (position: sticky)) { }
 
-#name hr {
+hr {
   margin-top: 0 !important; }
 
 #links a {
@@ -253,6 +253,12 @@ hr {
 
 .img_wrapper {
   margin-top: 0.5rem !important; }
+
+#portrait {
+  margin-top: 1rem !important; }
+
+#portrait {
+  margin-bottom: 1rem !important; }
 
 p {
   padding-right: 0.5rem !important; }
@@ -270,10 +276,7 @@ p {
 p {
   margin-left: auto !important; }
 
-#main_text {
-  text-align: justify !important; }
-
-#name .col, #links {
+#links {
   text-align: center !important; }
 
 .emphasis {
@@ -320,35 +323,84 @@ p {
 @import "node_modules/bootstrap/scss/code";
 @import "node_modules/bootstrap/scss/grid";
 */
-#name {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-  background: #eee; }
-  #name .col {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    font-size: 80px; }
-  #name hr {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    border: none;
-    height: 1px;
-    color: #777777;
-    background-color: #777777; }
+#intro {
+  background-color: #fff; }
 
 .center_row {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
+
+.img_wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px; }
+  @media (min-width: 992px) {
+    .img_wrapper {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%; } }
+
+#portrait {
+  max-width: 100%;
+  height: auto;
+  width: 300px;
+  height: 300px; }
+  @media (min-width: 992px) {
+    #portrait {
+      float: right !important; } }
+
+#self {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background: #fff; }
+  @media (min-width: 992px) {
+    #self {
+      flex: 0 0 58.33333%;
+      max-width: 58.33333%; } }
+  @media (min-width: 1200px) {
+    #self {
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%; } }
+  #self .words {
+    width: auto;
+    height: 100%;
+    align-items: center;
+    background-color: #fff;
+    text-align: center; }
+    @media (max-width: 991.98px) {
+      #self .words {
+        width: 100%;
+        display: block !important; } }
+    #self .words .name {
+      font-size: 75px; }
+      @media (min-width: 768px) {
+        #self .words .name {
+          font-size: 85px; } }
+      @media (min-width: 992px) {
+        #self .words .name {
+          font-size: 80px;
+          text-align: left; } }
+      @media (min-width: 1200px) {
+        #self .words .name {
+          font-size: 115px; } }
+      #self .words .name p {
+        text-align: center; }
+
+hr {
+  visibility: hidden;
+  border: none;
+  height: 1px;
+  color: #777;
+  background-color: #777; }
+  @media (min-width: 992px) {
+    hr {
+      visibility: visible; } }
 
 #links {
   position: relative;
@@ -362,24 +414,5 @@ p {
 .emphasis {
   font-family: 'Cutive+Mono', monospace; }
 
-.img_wrapper {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px; }
-
-#portrait {
-  width: 300px;
-  height: 300px; }
-
-#main_text {
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px; }
-
 p {
-  width: 420px;
-  font-size: 20px; }
+  font-size: 28px; }

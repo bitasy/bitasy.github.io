@@ -1,28 +1,104 @@
-$middle_width: 420px;
+#intro, #projects {
+	@extend .container-fluid;
+}
 
-#name {
-	@include make-row();
-	background: $body-bg;
-	@extend .sticky-top, .justify-content-center;
-		.col {
-			@include make-col-ready();
-			@extend .text-center;
-			font-size: 80px;
-		}
-
-		hr {
-				@include make-col-ready();
-				@extend .mt-0;
-				border: none;
-				height: 1px;
-				color: #777777;
-				background-color: #777777;
-		}
+#intro {
+	background-color: $intro-bg;
 }
 
 .center_row {
 	@include make-row();
 	@extend .justify-content-center;
+}
+
+.img_wrapper {
+	@include make-col-ready();
+
+	@extend .offset-md-1;
+
+	@include media-breakpoint-up(lg) {
+    @include make-col(4);
+  }
+
+	@extend .mx-auto, .mt-2;
+}
+
+#portrait {
+	@include img-fluid()
+	@include media-breakpoint-up(lg) {
+		@include float-right()
+  }
+	@extend .rounded-circle, .d-block, .mx-auto, .my-3;
+	width: 300px;
+	height: 300px;
+}
+
+#self {
+	@include make-col-ready();
+
+
+		@include media-breakpoint-up(lg) {
+	    @include make-col(7);
+	  }
+
+	@include media-breakpoint-up(xl) {
+    @include make-col(8);
+  }
+
+	background: $intro-bg;
+
+	//@extend .justify-content-center;
+
+		.words {
+			width: auto;
+			height: 100%;
+			@extend .d-inline-flex;
+			align-items: center;
+			background-color: $intro-bg;
+			text-align: center;
+
+			@include media-breakpoint-down(md) {
+				width: 100%;
+				display: block !important;
+			}
+
+			.name {
+				font-size: 75px;
+
+				@include media-breakpoint-up(md) {
+			    font-size: 85px;
+			  }
+
+				@include media-breakpoint-up(lg) {
+			    font-size: 80px;
+					text-align: left;
+			  }
+
+				@include media-breakpoint-up(xl) {
+			    font-size: 115px;
+			  }
+
+				p {
+					text-align: center;
+				}
+			}
+
+
+
+
+		}
+}
+
+hr {
+		visibility: hidden;
+		@include media-breakpoint-up(lg) {
+			visibility: visible;
+		}
+		@extend .mt-0;
+		border: none;
+		height: 1px;
+		color: #777;
+		background-color: #777;
 }
 
 #links {
@@ -39,24 +115,7 @@ $middle_width: 420px;
 	@extend .ml-1, .font-weight-normal;
 }
 
-.img_wrapper {
-	@include make-col-ready();
-	@extend .mx-auto, .mt-2;
-}
-
-#portrait {
-	@extend .rounded-circle, .d-block, .mx-auto;
-	width: 300px;
-	height: 300px;
-}
-
-#main_text {
-	@include make-col-ready();
-	@extend .text-justify;
-}
-
 p {
 	@extend .mx-auto, .font-weight-bold, .px-2;
-	width: $middle_width;
-	font-size: 20px;
+	font-size: 28px;
 }
