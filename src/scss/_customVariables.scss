@@ -9,8 +9,25 @@ $hr-margin-y: 0.5rem;
 $line-height-base: 1.75;
 
 $intro-bg: #fff;
+$mobile-intro: sm;
+$long-intro: md;
+
 $body-bg: #eee;
 $body-color: #000;
 $paragraph-margin-bottom: 1.5rem;
 
-$cookie-color: #543729
+$cookie-color: #543729;
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+$grid-breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl
+);

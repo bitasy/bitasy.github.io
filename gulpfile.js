@@ -1,6 +1,8 @@
 var gulp         = require('gulp');
 var browserSync  = require('browser-sync').create();
 var sass         = require('gulp-sass');
+var sassVarsToJs = require('gulp-sass-vars-to-js');
+var rename       = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var uncss        = require('gulp-uncss');
 
@@ -24,14 +26,23 @@ gulp.task('js', function() {
 });
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['sass', 'sassvars'], function() {
 
     browserSync.init({
         server: "."
     });
 
-    gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['sass']);
-    gulp.watch("*.html").on('change', browserSync.reload);
+    gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['sass', 'sassvars']);
+    gulp.watch('*.html').on('change', browserSync.reload);
+    gulp.watch('src/js/app.js').on('change', browserSync.reload);
 });
+
+gulp.task('sassvars', function() {
+    gulp.src(['src/scss/_customVariables.scss'])
+        .pipe(sassVarsToJs())
+        .pipe(rename('vars.js'))
+        .pipe(gulp.dest('src/js'))
+
+})
 
 gulp.task('default', ['js','serve']);

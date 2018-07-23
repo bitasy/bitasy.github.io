@@ -1,9 +1,14 @@
-#intro, #projects {
+section {
 	@extend .container-fluid;
 }
 
 #intro {
 	background-color: $intro-bg;
+
+	@include media-breakpoint-down(sm) {
+		height: 100vh;
+		
+	}
 }
 
 .center_row {
@@ -16,7 +21,7 @@
 
 	@extend .offset-md-1;
 
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up($long-intro) {
     @include make-col(4);
   }
 
@@ -25,7 +30,7 @@
 
 #portrait {
 	@include img-fluid()
-	@include media-breakpoint-up(lg) {
+	@include media-breakpoint-up($long-intro) {
 		@include float-right()
   }
 	@extend .rounded-circle, .d-block, .mx-auto, .my-3;
@@ -37,11 +42,11 @@
 	@include make-col-ready();
 
 
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up($long-intro) {
 	    @include make-col(7);
 	  }
 
-	@include media-breakpoint-up(xl) {
+	@include media-breakpoint-up(breakpoint-next($long-intro)) {
     @include make-col(8);
   }
 
@@ -54,19 +59,19 @@
 			height: 100%;
 			@extend .d-inline-flex;
 			align-items: center;
-			background-color: $intro-bg;
+			background: $intro-bg;
 			text-align: center;
 
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down($mobile-intro) {
 				width: 100%;
 				display: block !important;
 			}
 
 			.name {
-				font-size: 75px;
+				font-size: 50px;
 
 				@include media-breakpoint-up(md) {
-			    font-size: 85px;
+			    font-size: 60px;
 			  }
 
 				@include media-breakpoint-up(lg) {
@@ -91,7 +96,7 @@
 
 hr {
 		visibility: hidden;
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up($long-intro) {
 			visibility: visible;
 		}
 		@extend .mt-0;
@@ -101,9 +106,16 @@ hr {
 		background-color: #777;
 }
 
+#description {
+	@include make-row();
+
+		p {
+			@include make-col-ready()
+		}
+}
+
 #links {
 	@include make-col-ready();
-	@include make-col(12);
 	@extend .text-center;
 	a {
 		@extend .mx-1;
@@ -118,4 +130,7 @@ hr {
 p {
 	@extend .mx-auto, .font-weight-bold, .px-2;
 	font-size: 28px;
+	@include media-breakpoint-down(sm) {
+		font-size: 20px;
+	}
 }
