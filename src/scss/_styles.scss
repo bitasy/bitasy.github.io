@@ -7,7 +7,7 @@ section {
 
 	@include media-breakpoint-down(sm) {
 		height: 100vh;
-		
+
 	}
 }
 
@@ -34,8 +34,8 @@ section {
 		@include float-right()
   }
 	@extend .rounded-circle, .d-block, .mx-auto, .my-3;
-	width: 300px;
-	height: 300px;
+	width: auto;
+	max-height: 300px;
 }
 
 #self {

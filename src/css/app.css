@@ -349,8 +349,8 @@ p {
 #portrait {
   max-width: 100%;
   height: auto;
-  width: 300px;
-  height: 300px; }
+  width: auto;
+  max-height: 300px; }
   @media (min-width: 768px) {
     #portrait {
       float: right !important; } }

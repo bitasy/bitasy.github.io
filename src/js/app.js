@@ -2,34 +2,25 @@ import * as vars from './vars.js';
 
 var cutoff = '0';
 
-switch (vars.LongIntro) {
-  case 'sm':
-    cutoff = vars.Sm;
-    break;
-  case 'md':
-    cutoff = vars.Md;
-    break;
-  case 'lg':
-    cutoff = vars.Lg;
-    break;
-  case 'xl':
-    cutoff = vars.Xl;
-    break;
-}
+var sizeMap = new Map();
+sizeMap.set('sm', vars.Sm);
+sizeMap.set('md', vars.Md);
+sizeMap.set('lg', vars.Lg);
+sizeMap.set('xl', vars.Xl);
+
+cutoff = sizeMap.get(vars.LongIntro);
 
 // Use same cutoff math as Bootstrap for media query
 cutoff = String(parseFloat(cutoff) - 0.02) + "px"
 
 var intro = document.getElementById("intro");
-console.log(cutoff);
 var x = window.matchMedia("(max-width: " + cutoff + ")")
 
 function myFunction(x) {
     if (x.matches) { // If media query matches
-      console.log("match")
       intro.style.height = String(window.innerHeight) + "px";
     } else {
-      console.log(x)
+      intro.style.height = "auto";
     }
 }
 
