@@ -279,11 +279,8 @@ p {
 #links {
   text-align: center !important; }
 
-.emphasis {
-  font-weight: 400 !important; }
-
 p {
-  font-weight: 900 !important; }
+  font-weight: 300 !important; }
 
 @media print {
   *,
@@ -324,10 +321,16 @@ p {
 @import "node_modules/bootstrap/scss/grid";
 */
 #intro {
-  background-color: #fff; }
+  background: url("../images/code-screen-blur.png"), no-repeat;
+  background-color: #cccccc; }
   @media (max-width: 767.98px) {
     #intro {
-      height: 100vh; } }
+      height: 100vh;
+      background: url("../images/code-screen-blur-crop.png"), no-repeat;
+      background-size: cover; }
+      #intro .row {
+        height: 100%;
+        align-items: center; } }
 
 .center_row {
   display: flex;
@@ -360,8 +363,7 @@ p {
   width: 100%;
   min-height: 1px;
   padding-right: 15px;
-  padding-left: 15px;
-  background: #fff; }
+  padding-left: 15px; }
   @media (min-width: 768px) {
     #self {
       flex: 0 0 58.33333%;
@@ -374,26 +376,29 @@ p {
     width: auto;
     height: 100%;
     align-items: center;
-    background: #fff;
-    text-align: center; }
+    text-align: center;
+    color: #fff; }
     @media (max-width: 767.98px) {
       #self .words {
         width: 100%;
         display: block !important; } }
     #self .words .name {
-      font-size: 50px; }
-      @media (min-width: 768px) {
+      font-size: 45px;
+      font-weight: 300; }
+      @media (min-width: 576px) {
         #self .words .name {
           font-size: 60px; } }
       @media (min-width: 992px) {
         #self .words .name {
-          font-size: 80px;
+          font-size: 90px;
           text-align: left; } }
       @media (min-width: 1200px) {
         #self .words .name {
-          font-size: 115px; } }
+          font-size: 110px; } }
       #self .words .name p {
         text-align: center; }
+        #self .words .name p .serif {
+          font-family: serif; }
 
 hr {
   visibility: hidden;
@@ -405,6 +410,28 @@ hr {
     hr {
       visibility: visible; } }
 
+.body-text {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px; }
+  .body-text p {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; }
+    @media (max-width: 767.98px) {
+      .body-text p {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+        margin-left: 8.33333%; } }
+    @media (min-width: 768px) {
+      .body-text p {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+        margin-left: 16.66667%; } }
+
 #links {
   position: relative;
   width: 100%;
@@ -413,7 +440,8 @@ hr {
   padding-left: 15px; }
 
 .emphasis {
-  font-family: 'Cutive+Mono', monospace; }
+  font-family: 'Cutive+Mono', monospace;
+  font-weight: 400; }
 
 p {
   font-size: 28px; }
