@@ -12,6 +12,11 @@ $intro-bg: #fff;
 $mobile-intro: sm;
 $long-intro: md;
 
+$small-portrait: 200px;
+$large-portrait: 300px;
+$portrait-cutoff: 1000px; //Minimum window height to use the large image. Only on long intro.
+
+
 $body-bg: #eee;
 $body-color: #000;
 $paragraph-margin-bottom: 1.5rem;
@@ -22,7 +27,7 @@ $xs: 0;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
-$xl: 1200px;
+$xl: 1500px;
 
 $grid-breakpoints: (
   xs: $xs,

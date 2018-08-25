@@ -30,7 +30,7 @@
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
+  --breakpoint-xl: 1500px;
   --font-family-sans-serif: "Lato", "Segoe UI Light", "Calibri Light", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
@@ -72,6 +72,9 @@ p {
   margin-top: 0;
   margin-bottom: 1.5rem; }
 
+blockquote {
+  margin: 0 0 1rem; }
+
 b {
   font-weight: bolder; }
 
@@ -97,6 +100,10 @@ hr {
   margin-bottom: 0.5rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+.blockquote {
+  margin-bottom: 1rem;
+  font-size: 1.25rem; }
 
 section {
   width: 100%;
@@ -290,6 +297,9 @@ p {
     box-shadow: none !important; }
   a:not(.btn) {
     text-decoration: underline; }
+  blockquote {
+    border: 1px solid #adb5bd;
+    page-break-inside: avoid; }
   img {
     page-break-inside: avoid; }
   p {
@@ -392,7 +402,7 @@ p {
         #self .words .name {
           font-size: 90px;
           text-align: left; } }
-      @media (min-width: 1200px) {
+      @media (min-width: 1500px) {
         #self .words .name {
           font-size: 110px; } }
       #self .words .name p {

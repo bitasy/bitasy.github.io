@@ -11,21 +11,44 @@ sizeMap.set('xl', vars.Xl);
 cutoff = sizeMap.get(vars.LongIntro);
 
 // Use same cutoff math as Bootstrap for media query
-cutoff = String(parseFloat(cutoff) - 0.02) + "px"
+var shortCutoff = String(parseFloat(cutoff) - 0.02) + "px"
 
 var intro = document.getElementById("intro");
-var x = window.matchMedia("(max-width: " + cutoff + ")")
+var short = window.matchMedia("(max-width: " + shortCutoff + ")");
 
-function myFunction(x) {
-    if (x.matches) { // If media query matches
+
+var portrait = document.getElementById("portrait");
+
+function testShort(short) {
+    if (short.matches) { // If media query matches
       intro.style.height = String(window.innerHeight) + "px";
+      portrait.style.maxHeight = vars.LargePortrait + 'px';
+      console.log(portrait.style.maxHeight);
     } else {
       intro.style.height = "auto";
     }
 }
 
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
+testShort(short); // Call listener function at run time
+short.addListener(testShort); // Attach listener function on state changes
+
+var bigQuery = "(min-width: " + cutoff + "px) and (min-height: " + vars.PortraitCutoff + "px)";
+var big = window.matchMedia(bigQuery);
+
+function testBig(big) {
+    if (big.matches) { // If media query matches
+      portrait.style.maxHeight = vars.LargePortrait + 'px';
+    } else {
+      if (!short.matches){
+        portrait.style.maxHeight = vars.SmallPortrait + 'px';    
+      }
+    }
+}
+
+testBig(big); // Call listener function at run time
+big.addListener(testBig); // Attach listener function on state changes
+
+
 /*
 $(document).ready(function () {
     var $horizontal = $('#test');

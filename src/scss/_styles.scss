@@ -37,11 +37,11 @@ section {
 #portrait {
 	@include img-fluid()
 	@include media-breakpoint-up($long-intro) {
-		@include float-right()
+		@include float-right();
   }
 	@extend .rounded-circle, .d-block, .mx-auto, .my-3;
 	width: auto;
-	max-height: 300px;
+	max-height: $large-portrait;
 }
 
 #self {
