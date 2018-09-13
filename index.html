@@ -24,50 +24,121 @@
             </div>
           </div>
         </div>
-      </section>
-      <hr />
-
-      <section id="about">
-        <div class="body-text">
-          <p>
-            I am a computer scientist and programmer at heart.
-          </p>
-          <p>
-            I also dabble in data science, mathematics, music, and philosophy. I enjoy thinking deeply about interesting problems, whether they come from the realm of technology, political theory, or elsewhere.
-          </p>
-          <p>
-            Why <i>bitasy</i>? I consider it my online pseudonym of sorts; it follows me everywhere I go on the internet.
-          </p>
-          <p>
-            <i>Portfolio coming soon.</i> In the meantime, please check out my Github and resume below!
-          </p>
-        </div>
-
-
-
-
-
-        <div class="center_row">
-          <div id="links">
-            <a href="src/docs/resume.pdf">
-              <img src="src/icons/resume.png" alt="Resume" />
-            </a>
-            <a href="https://github.com/bitasy">
-              <img src="src/icons/github/GitHub-Mark/PNG/GitHub-Mark-64px.png" alt="Github Profile"/>
-            </a>
-            <a href="https://www.linkedin.com/in/bitasy/">
-              <img src="src/icons/linkedin/LinkedIn [in] for Screen/2-Color/In-2C-66px-TM.png"/>
-            </a>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
+    <hr />
 
     <section id="projects">
-      <!-- Hiding temporarily to push to internet.
-      <img src="src/images/cookies.png" alt="Image of chocolate chip cookies." />
-      <!-->
+
+      <div id="project-grid">
+        <p class="section-header">Recent Work</p>
+
+
+
+        <div class="cardcol">
+          <div class="card">
+            <div class="card-header">
+              Current Research
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Hound Data Center Analysis</h5>
+              <p class="card-text">Diagnostic of data center job performance and real time rescheduling.</p>
+              <button type="button" class="btn btn-primary" disabled>Not yet public</button>
+              <a class="btn btn-primary" data-toggle="collapse" href="#skills1" role="button" aria-expanded="false" aria-controls="skills1">See skills</a>
+            </div>
+            <div class="collapse" id="skills1">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Python3</li>
+                <li class="list-group-item">Apache Spark</li>
+                <li class="list-group-item">Machine Learning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="cardcol">
+          <div class="card">
+            <div class="card-header">
+              Current Research
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Motivated Memory Lab</h5>
+              <p class="card-text">Using Amazon Mechanical Turk to study human motivation.</p>
+              <a href="http://github.com/MotivatedMemoryLab/mouse-track-task" class="btn btn-primary">Check it out</a>
+              <a class="btn btn-primary" data-toggle="collapse" href="#skills2" role="button" aria-expanded="false" aria-controls="skills2">See skills</a>
+            </div>
+            <div class="collapse" id="skills2">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Python3</li>
+                <li class="list-group-item">Boto3</li>
+                <li class="list-group-item">Psiturk</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="cardcol">
+          <div class="card">
+            <div class="card-header">
+              Class Project
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">VoogaPeaches</h5>
+              <p class="card-text">User interface for a video game authoring environment called VoogaPeaches.</p>
+              <a href="http://github.com/bitasy/workspace-creator" class="btn btn-primary">Check it out</a>
+              <a class="btn btn-primary" data-toggle="collapse" href="#skills3" role="button" aria-expanded="false" aria-controls="skills3">See skills</a>
+            </div>
+            <div class="collapse" id="skills3">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Java</li>
+                <li class="list-group-item">Object Oriented Design</li>
+                <li class="list-group-item">Git Versioning Software</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
+
+    <section id="about">
+
+      <div class="body-text">
+        <p class="section-header">About me</p>
+        <p>
+          I am a computer scientist and programmer at heart.
+        </p>
+        <p>
+          I also dabble in data science, mathematics, music, and philosophy. I enjoy thinking deeply about interesting problems, whether they come from the realm of technology, political theory, or elsewhere.
+        </p>
+        <p>
+          Why <i>bitasy</i>? I consider it my online pseudonym of sorts; it follows me everywhere I go on the internet.
+        </p>
+        <p>
+          <i>Portfolio coming soon.</i> In the meantime, please check out my Github and resume below!
+        </p>
+      </div>
+
+
+
+
+      <div class="center_row">
+        <div id="links">
+          <a href="src/docs/resume.pdf">
+            <img src="src/icons/resume.png" alt="Resume" />
+          </a>
+          <a href="https://github.com/bitasy">
+            <img src="src/icons/github/GitHub-Mark/PNG/GitHub-Mark-64px.png" alt="Github Profile"/>
+          </a>
+          <a href="https://www.linkedin.com/in/bitasy/">
+            <img src="src/icons/linkedin/LinkedIn [in] for Screen/2-Color/In-2C-66px-TM.png"/>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <script src="src/js/jquery.min.js" type="text/javascript"></script>
+    <script src="src/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="src/js/vars.js" type="module"></script>
     <script src="src/js/app.js" type="module"></script>
   </body>

@@ -17,6 +17,33 @@ section {
 	}
 }
 
+#about {
+
+}
+
+#projects {
+	#project-grid {
+		@include make-row();
+		@extend .justify-content-center;
+
+		.cardcol {
+			@include make-col-ready();
+
+			@include media-breakpoint-down($mobile-intro) {
+				@include make-col(12);
+			}
+
+			@include media-breakpoint-up($long-intro) {
+				@include make-col(3);
+			}
+
+			.card .card-body .card-text {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
 .center_row {
 	@include make-row();
 	@extend .justify-content-center;
@@ -112,26 +139,18 @@ hr {
 
 .body-text {
 	@include make-row();
+	@extend .justify-content-center;
 
 		p {
 			@include make-col-ready()
-
-			@include media-breakpoint-down($mobile-intro) {
-				@include make-col(10)
-				@include make-col-offset(1)
-			}
-
-			@include media-breakpoint-up($long-intro) {
-				@include make-col(8)
-				@include make-col-offset(2)
-			}
-
+			@include make-col(10);
 		}
 }
 
 #links {
 	@include make-col-ready();
 	@extend .text-center;
+	@extend .mb-3;
 	a {
 		@extend .mx-1;
 	}
@@ -141,6 +160,14 @@ hr {
 	font-family: 'Cutive+Mono', monospace;
 	font-weight: 400;
 	@extend .ml-1;
+}
+
+.section-header {
+	@include make-col-ready();
+	@include make-col(12);
+	font-size: 60px;
+	text-align: center;
+
 }
 
 p {
