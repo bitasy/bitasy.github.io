@@ -406,8 +406,11 @@ hr {
 .emphasis, #links a {
   margin-left: 0.25rem !important; }
 
-.img_wrapper {
+.img_wrapper, #projects #project-grid .cardcol {
   margin-top: 0.5rem !important; }
+
+#projects #project-grid .cardcol {
+  margin-bottom: 0.5rem !important; }
 
 #portrait {
   margin-top: 1rem !important; }
@@ -503,6 +506,10 @@ p {
         flex: 0 0 100%;
         max-width: 100%; } }
     @media (min-width: 768px) {
+      #projects #project-grid .cardcol {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%; } }
+    @media (min-width: 992px) {
       #projects #project-grid .cardcol {
         flex: 0 0 25%;
         max-width: 25%; } }
