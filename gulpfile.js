@@ -1,4 +1,4 @@
-const { series, parallel, watch, src, dest } = require('gulp');
+const { series, watch, src, dest } = require('gulp');
 var server  = require('browser-sync').create();
 var sass         = require('gulp-sass');
 var sassVarsToJs = require('gulp-sass-vars-to-js');
@@ -48,11 +48,12 @@ function js(){
         .pipe( dest("src/js") );
 }
 
-watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], series(compile, sassvars, reload));
+watch('src/scss/*.scss', series(compile, safevars, reload));
 watch("*.html", reload);
 watch("src/js/*,js", reload);
 
-watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], series(compile, sassvars, reload));
+watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], series(compile, safevars, reload));
 
 const dev = series(compile, safevars, js, serve, reload);
 exports.default = dev;
+exports.compile = series(compile, safevars);

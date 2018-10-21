@@ -48,7 +48,6 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 @-ms-viewport {
-  /*noinspection CssInvalidPropertyValue*/
   width: device-width; }
 
 section {
@@ -181,9 +180,7 @@ section {
   line-height: 1.75;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
-
-/*noinspection CssInvalidMediaFeature*/
-@media screen and (prefers-reduced-motion: reduce) {
+  @media screen and (prefers-reduced-motion: reduce) {
     .btn {
       transition: none; } }
   .btn:hover, .btn:focus {
@@ -397,7 +394,7 @@ section {
 #self .words {
   display: inline-flex !important; }
 
-#projects #project-grid, .center_row, .body-text {
+.project-grid, .center_row, .body-text {
   justify-content: center !important; }
 
 @supports ((position: -webkit-sticky) or (position: sticky)) { }
@@ -405,16 +402,19 @@ section {
 hr {
   margin-top: 0 !important; }
 
+.project-grid .cardcol .card-body .btn {
+  margin: 0.25rem !important; }
+
 #links a {
   margin-right: 0.25rem !important; }
 
 .emphasis, #links a {
   margin-left: 0.25rem !important; }
 
-.img_wrapper, #projects #project-grid .cardcol {
+.img_wrapper, .project-grid .cardcol {
   margin-top: 0.5rem !important; }
 
-#projects #project-grid .cardcol {
+.project-grid .cardcol {
   margin-bottom: 0.5rem !important; }
 
 #portrait {
@@ -495,30 +495,30 @@ p {
         height: 100%;
         align-items: center; } }
 
-#projects #project-grid {
+.project-grid {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px; }
-  #projects #project-grid .cardcol {
+  .project-grid .cardcol {
     position: relative;
     width: 100%;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px; }
     @media (max-width: 767.98px) {
-      #projects #project-grid .cardcol {
+      .project-grid .cardcol {
         flex: 0 0 100%;
         max-width: 100%; } }
     @media (min-width: 768px) {
-      #projects #project-grid .cardcol {
+      .project-grid .cardcol {
         flex: 0 0 33.33333%;
         max-width: 33.33333%; } }
     @media (min-width: 992px) {
-      #projects #project-grid .cardcol {
+      .project-grid .cardcol {
         flex: 0 0 25%;
         max-width: 25%; } }
-    #projects #project-grid .cardcol .card .card-body .card-text {
+    .project-grid .cardcol .card .card-body .card-text {
       font-size: 20px; }
 
 .center_row {
